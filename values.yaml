@@ -18,7 +18,7 @@ command: '["sleep", "99999"]'
 #deployment
 containerPort: 8080
 images:
-  mainImage: 10.0.2.12/golang:go-app2-web21
+  mainImage: 10.0.2.12/golang:go-app2-web22
   pullPolicy: IfNotPresent
 
 #Secrets
