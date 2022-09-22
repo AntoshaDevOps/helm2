@@ -14,7 +14,6 @@ spec:
     - name: terra-helm
       image: {{ .Values.images.mainImage }}
       imagePullPolicy: {{ .Values.images.pullPolicy }}
-      command: {{ .Values.command }}
       ports:
         - name: app
           containerPort: {{ .Values.lb.ports.number }}
