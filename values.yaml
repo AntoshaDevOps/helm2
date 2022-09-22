@@ -27,7 +27,7 @@ images:
 
 #lb
 lb:
-  namespace: test
+  namespace: test-prev
   podLabels:
     app: terra-helm
   ports:
