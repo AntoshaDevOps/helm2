@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: {{ .Values.namespace }}
+  name: kuber
+  labels:
+    app: {{ .Values.labels.terra }}
+    app2: kek
+  annotations: {{ toYaml .Values.annotations | nindent 4 }}
+spec:
+  imagePullSecrets:
+    - name: {{ .Values.secret.name }}
+  containers:
+    - name: terra-helm
+      image: {{ .Values.images.mainImage }}
+      imagePullPolicy: {{ .Values.images.pullPolicy }}
+      command: {{ .Values.command }}
+      ports:
+        - name: app
+          containerPort: {{ .Values.lb.ports.number }}
+          protocol: TCP
+          hostPort: 9000

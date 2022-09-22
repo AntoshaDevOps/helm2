@@ -1,0 +1,25 @@
+# Default values for my_test.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+namespace: test
+
+labels:
+  kek: pop
+
+annotations:
+  superan: terra-helm
+  superpuper: terra-helm2
+
+replicaCount: 1
+
+
+#deployment
+containerPort: 8080
+images:
+  mainImage: alpine
+  pullPolicy: IfNotPresent
+
+#Secrets
+# dockerReg: docker-reg
+# servAcc: python-acc

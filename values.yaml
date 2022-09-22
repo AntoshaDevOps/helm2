@@ -1,0 +1,41 @@
+# Default values for my_test.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+namespace: test
+
+labels:
+  terra: terra-helm
+
+annotations:
+  superan: terra-helm
+  superpuper: terra-helm2
+
+replicaCount: 1
+
+command: '["sleep", "99999"]'
+
+#deployment
+containerPort: 8080
+images:
+  mainImage: alpine
+  pullPolicy: IfNotPresent
+
+#Secrets
+# dockerReg: docker-reg
+# servAcc: python-acc
+
+#lb
+lb:
+  namespace: test
+  podLabels:
+    app: terra-helm
+  ports:
+    name: app
+    number: 8080
+
+#secret
+secret:
+  name: nexus-docker
+  docker: "ewogICAgICAgICJhdXRocyI6IHsKICAgICAgICAgICAgICAgICIxMC4wLjIuMTIiOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICJhdXRoIjogImJYbGtiMk5yWlhJNmJYbGtiMk5yWlhJPSIKICAgICAgICAgICAgICAgIH0KICAgICAgICB9Cn0KCg=="
+  

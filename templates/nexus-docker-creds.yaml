@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  .dockerconfigjson: {{ .Values.secret.docker }}
+kind: Secret
+metadata:
+  name: {{ .Values.secret.name }}
+  namespace: {{ .Values.namespace }}
+type: kubernetes.io/dockerconfigjson
