@@ -11,4 +11,3 @@ spec:
       port: 80
       protocol: TCP
       targetPort: {{ .Values.ports.name }}
-      nodePort: 30010
